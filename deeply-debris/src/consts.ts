@@ -1,6 +1,7 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'مدونة الدكتور يوسف إبراهيم الجدائمي';
-export const SITE_DESCRIPTION = 'المدونة الرسمية لنشر المعرفة التسويقية والاستشارات لمنظمات الأعمال وطلاب الدراسات العليا';
+// Global website information
 
+export const SITE_TITLE = 'د. يوسف إبراهيم الجدائمي | الموقع الأكاديمي والمهني';
+
+export const SITE_DESCRIPTION =
+  'الموقع الرسمي لد. يوسف إبراهيم الجدائمي، أستاذ مشارك في التسويق ومستشار تسويقي. منصة أكاديمية لنشر الأبحاث والدراسات العلمية والمقالات والمحاضرات، وتقديم الاستشارات التسويقية والتدريب والتحليل الإحصائي.';
