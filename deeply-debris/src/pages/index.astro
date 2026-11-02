@@ -1,3 +1,4 @@
+
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -6,30 +7,438 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
+
 	<body>
 		<Header />
-		        <main>
-            <h1 style="text-align: center; margin-top: 20px;">أهلاً بكم في موقعي الرسمي</h1>
-            
-            <div style="text-align: center; margin: 30px 0;">
-                <img src="/yousuf2.jpg" alt="الدكتور يوسف إبراهيم الجدائمي" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid #ecef1a; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
 
-            </div>
+		<main class="home-main">
+			<section class="hero-section">
+				<div class="hero-content">
+					<p class="welcome-label">الموقع الأكاديمي والمهني الرسمي</p>
 
-            <p style="text-align: center; font-size: 1.2rem; line-height: 1.8;">
-                المدونة الرسمية لنشر المعرفة التسويقية والاستشارات لمنظمات الأعمال وطلاب الدراسات العليا
-            </p>
-        </main>
+					<h1>
+						مرحباً بكم في الموقع الرسمي
+						<span>للدكتور يوسف إبراهيم الجدائمي</span>
+					</h1>
 
-			</p>
-			<p>
-		
-			</p>
+					<h2>أستاذ مشارك في التسويق | مستشار تسويقي</h2>
+
+					<p class="hero-description">
+						منصة علمية ومهنية تهدف إلى نشر المعرفة الأكاديمية والتسويقية،
+						وتبادل الخبرات، ودعم الباحثين وطلاب الدراسات العليا،
+						وتقديم الرؤى والاستشارات التي تسهم في تطوير منظمات الأعمال.
+					</p>
+
+					<div class="hero-actions">
+						<a href="/about" class="primary-button">
+							تعرف على سيرتي الذاتية
+						</a>
+
+						<a href="/blog" class="secondary-button">
+							استكشف المقالات والأبحاث
+						</a>
+					</div>
+				</div>
+
+				<div class="hero-image-wrapper">
+					<div class="image-decoration"></div>
+					<img
+						src="/yousuf2.jpg"
+						alt="الدكتور يوسف إبراهيم الجدائمي"
+						class="profile-image"
+						width="360"
+						height="360"
+						fetchpriority="high"
+					/>
+				</div>
+			</section>
+
+			<section class="intro-section">
+				<div class="section-heading">
+					<span>المعرفة والخبرة</span>
+					<h2>مسارات أكاديمية ومهنية</h2>
+					<p>
+						مجالات تجمع بين البحث العلمي والتطبيق العملي،
+						وتسهم في تطوير المعرفة والممارسات الإدارية والتسويقية.
+					</p>
+				</div>
+
+				<div class="expertise-grid">
+					<article class="expertise-card">
+						<div class="card-number">01</div>
+						<h3>البحث العلمي والدراسات الأكاديمية</h3>
+						<p>
+							الاهتمام بالبحوث التسويقية والإدارية،
+							والدراسات العلمية، ومناهج البحث،
+							وتطوير المعرفة الأكاديمية.
+						</p>
+					</article>
+
+					<article class="expertise-card">
+						<div class="card-number">02</div>
+						<h3>الاستشارات التسويقية</h3>
+						<p>
+							التسويق الاستراتيجي، وسلوك المستهلك،
+							وبحوث الأسواق، والعلامات التجارية،
+							وتطوير الأداء التسويقي للمؤسسات.
+						</p>
+					</article>
+
+					<article class="expertise-card">
+						<div class="card-number">03</div>
+						<h3>التحليل الإحصائي والبحثي</h3>
+						<p>
+							تحليل البيانات البحثية، واختبار الفرضيات،
+							وتقييم أدوات القياس، وتفسير النتائج
+							الإحصائية في الدراسات العلمية.
+						</p>
+					</article>
+
+					<article class="expertise-card">
+						<div class="card-number">04</div>
+						<h3>التدريب والتطوير الأكاديمي</h3>
+						<p>
+							التدريب في مناهج البحث العلمي،
+							والتحليل الإحصائي، والكتابة الأكاديمية،
+							وتطوير المهارات البحثية والمهنية.
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="knowledge-section">
+				<div>
+					<span class="knowledge-label">منصة للمعرفة والتواصل</span>
+					<h2>المعرفة العلمية أساس التطوير والتميز</h2>
+					<p>
+						أرحب بالباحثين والأكاديميين والمهتمين بالتسويق والإدارة،
+						وبكل من يسعى إلى تطوير معارفه ومهاراته من خلال
+						البحث العلمي والتعلم المستمر وتبادل الخبرات.
+					</p>
+				</div>
+
+				<a href="/blog" class="knowledge-button">
+					تصفح المقالات والمنشورات
+				</a>
+			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.home-main {
+		width: min(1100px, calc(100% - 2.5rem));
+		margin: 0 auto;
+		padding: 2.5rem 0 4rem;
+	}
+
+	.hero-section {
+		display: grid;
+		grid-template-columns: 1.35fr 0.85fr;
+		align-items: center;
+		gap: 3rem;
+		padding: 3.5rem 2.5rem;
+		background: var(--background-light);
+		border-radius: 18px;
+		overflow: hidden;
+	}
+
+	.hero-content {
+		order: 1;
+	}
+
+	.welcome-label,
+	.knowledge-label {
+		display: inline-block;
+		margin: 0 0 1rem;
+		color: var(--gold-dark);
+		font-size: 0.9rem;
+		font-weight: 700;
+	}
+
+	.hero-content h1 {
+		margin: 0 0 1.2rem;
+		color: var(--navy);
+		font-size: clamp(1.8rem, 4vw, 2.7rem);
+		font-weight: 800;
+		line-height: 1.6;
+	}
+
+	.hero-content h1 span {
+		display: block;
+		color: var(--gold-dark);
+	}
+
+	.hero-content h2 {
+		margin: 0 0 1.2rem;
+		color: var(--navy-light);
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+
+	.hero-description {
+		max-width: 650px;
+		margin: 0;
+		color: var(--gray-dark);
+		font-size: 1.05rem;
+		line-height: 2.1;
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	.hero-actions a,
+	.knowledge-button {
+		display: inline-block;
+		padding: 0.85rem 1.3rem;
+		border-radius: 7px;
+		font-size: 0.9rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: all 0.25s ease;
+	}
+
+	.primary-button {
+		background: var(--navy);
+		color: var(--white);
+		border: 1px solid var(--navy);
+	}
+
+	.primary-button:hover {
+		background: var(--navy-light);
+	}
+
+	.secondary-button {
+		color: var(--navy);
+		border: 1px solid var(--gold);
+		background: transparent;
+	}
+
+	.secondary-button:hover {
+		background: var(--gold);
+		color: var(--white);
+	}
+
+	.hero-image-wrapper {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 340px;
+		order: 2;
+	}
+
+	.image-decoration {
+		position: absolute;
+		width: 290px;
+		height: 290px;
+		border: 3px solid var(--gold);
+		border-radius: 50%;
+		transform: translate(12px, 12px);
+	}
+
+	.profile-image {
+		position: relative;
+		width: 290px;
+		height: 290px;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 50%;
+		border: 7px solid var(--white);
+		box-shadow: 0 10px 35px rgba(11, 37, 69, 0.15);
+	}
+
+	.intro-section {
+		padding: 5rem 0 3rem;
+	}
+
+	.section-heading {
+		max-width: 680px;
+		margin: 0 auto 2.5rem;
+		text-align: center;
+	}
+
+	.section-heading > span {
+		color: var(--gold-dark);
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+
+	.section-heading h2 {
+		margin: 0.6rem 0;
+		color: var(--navy);
+		font-size: 1.8rem;
+		font-weight: 800;
+	}
+
+	.section-heading p {
+		color: var(--gray-dark);
+		line-height: 1.9;
+	}
+
+	.expertise-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.3rem;
+	}
+
+	.expertise-card {
+		position: relative;
+		padding: 1.8rem;
+		background: var(--white);
+		border: 1px solid #e8edf2;
+		border-radius: 12px;
+		box-shadow: 0 5px 18px rgba(11, 37, 69, 0.04);
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	.expertise-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 10px 25px rgba(11, 37, 69, 0.09);
+	}
+
+	.card-number {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		margin-bottom: 1rem;
+		border-radius: 9px;
+		background: var(--background-light);
+		color: var(--gold-dark);
+		font-weight: 800;
+	}
+
+	.expertise-card h3 {
+		margin: 0 0 0.7rem;
+		color: var(--navy);
+		font-size: 1.15rem;
+	}
+
+	.expertise-card p {
+		margin: 0;
+		color: var(--gray-dark);
+		font-size: 0.95rem;
+		line-height: 2;
+	}
+
+	.knowledge-section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		margin-top: 2rem;
+		padding: 2.5rem;
+		background: var(--navy);
+		border-radius: 14px;
+	}
+
+	.knowledge-section h2 {
+		margin: 0 0 0.8rem;
+		color: var(--white);
+		font-size: 1.6rem;
+	}
+
+	.knowledge-section p {
+		max-width: 680px;
+		margin: 0;
+		color: #e0e7ef;
+		line-height: 2;
+	}
+
+	.knowledge-button {
+		flex-shrink: 0;
+		background: var(--gold);
+		color: var(--navy);
+		border: 1px solid var(--gold);
+	}
+
+	.knowledge-button:hover {
+		background: var(--white);
+		border-color: var(--white);
+	}
+
+	@media (max-width: 800px) {
+		.hero-section {
+			grid-template-columns: 1fr;
+			padding: 2.5rem 1.5rem;
+			gap: 2rem;
+		}
+
+		.hero-content {
+			order: 2;
+			text-align: center;
+		}
+
+		.hero-image-wrapper {
+			order: 1;
+			min-height: 280px;
+		}
+
+		.profile-image,
+		.image-decoration {
+			width: 240px;
+			height: 240px;
+		}
+
+		.hero-actions {
+			justify-content: center;
+		}
+
+		.hero-description {
+			margin-inline: auto;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.home-main {
+			width: calc(100% - 1.5rem);
+			padding-top: 1.2rem;
+		}
+
+		.expertise-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.intro-section {
+			padding-top: 3.5rem;
+		}
+
+		.section-heading h2 {
+			font-size: 1.5rem;
+		}
+
+		.knowledge-section {
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 1.7rem;
+		}
+
+		.knowledge-section h2 {
+			font-size: 1.35rem;
+		}
+
+		.hero-content h1 {
+			font-size: 1.8rem;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+		}
+
+		.hero-actions a {
+			text-align: center;
+		}
+	}
+</style>
