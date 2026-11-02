@@ -1,0 +1,82 @@
+
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="ar" dir="rtl">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				width: 100%;
+				max-width: 1100px;
+				margin: 0 auto;
+				padding: 2rem 1.5rem 4rem;
+				box-sizing: border-box;
+			}
+
+			.page-content {
+				width: 100%;
+				max-width: 900px;
+				margin: 0 auto;
+				color: var(--gray-dark);
+				line-height: 2;
+			}
+
+			.page-content h1 {
+				color: var(--navy);
+				font-size: clamp(1.8rem, 4vw, 2.5rem);
+				font-weight: 800;
+				line-height: 1.5;
+				margin-bottom: 1.5rem;
+			}
+
+			.page-content h2 {
+				color: var(--navy);
+				font-size: 1.4rem;
+				font-weight: 800;
+				margin-bottom: 1rem;
+			}
+
+			.page-content p,
+			.page-content li {
+				font-size: 1rem;
+				line-height: 2.1;
+			}
+
+			.page-content section {
+				margin: 2.5rem 0;
+			}
+
+			@media (max-width: 600px) {
+				main {
+					padding: 1.5rem 1rem 3rem;
+				}
+
+				.page-content h2 {
+					font-size: 1.2rem;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article class="page-content">
+				<h1>{title}</h1>
+				<slot />
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
