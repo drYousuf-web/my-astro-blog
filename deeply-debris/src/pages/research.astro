@@ -137,6 +137,56 @@ const publishedWorks = [
             ))}
         </div>
     </section>
+
+<section class="published-section">
+    <div class="section-heading">
+        <span class="section-label">الإنتاج العلمي المنشور</span>
+        <h2>الأبحاث المنشورة في المجلات العلمية</h2>
+        <p>
+            مجموعة من الأبحاث العلمية المنشورة في مجلات أكاديمية،
+            في مجالات التسويق وجودة الخدمات وسلوك المستهلك
+            والمسؤولية الاجتماعية.
+        </p>
+    </div>
+
+    <div class="published-grid">
+        {publishedWorks.map((work) => (
+            <article class="published-card">
+                <div class="published-top">
+                    <span class="published-label">بحث منشور</span>
+                    <span class="published-year">{work.year}</span>
+                </div>
+
+                <h3>{work.title}</h3>
+
+                <div class="journal-info">
+                    <strong>المجلة العلمية</strong>
+                    <span>{work.journal}</span>
+                </div>
+
+                <p class="publication-details">{work.details}</p>
+
+                {work.authors && (
+                    <p class="authors">
+                        <strong>المؤلفون:</strong> {work.authors}
+                    </p>
+                )}
+
+                {work.url && (
+                    <a
+                        class="research-link"
+                        href={work.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {work.linkLabel} ←
+                    </a>
+                )}
+            </article>
+        ))}
+    </div>
+</section>
+
 </Layout>
 
 <style>
@@ -296,4 +346,115 @@ const publishedWorks = [
             padding: 1.3rem;
         }
     }
+
+.published-section {
+    margin-top: 4rem;
+}
+
+.published-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
+}
+
+.published-card {
+    background: #ffffff;
+    border: 1px solid #e8edf2;
+    border-right: 4px solid var(--gold);
+    border-radius: 14px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 15px rgba(11, 37, 69, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.published-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 24px rgba(11, 37, 69, 0.09);
+}
+
+.published-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.published-label {
+    color: var(--navy);
+    background: #eef2f7;
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.published-year {
+    color: var(--gold-dark);
+    font-weight: 800;
+}
+
+.published-card h3 {
+    color: var(--navy);
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 1.2rem;
+}
+
+.journal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border-top: 1px solid #edf0f4;
+    padding-top: 1rem;
+    line-height: 1.8;
+}
+
+.journal-info strong {
+    color: var(--navy);
+    font-size: 0.85rem;
+}
+
+.journal-info span,
+.publication-details,
+.authors {
+    color: var(--gray-dark);
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+.publication-details {
+    margin-top: 0.7rem;
+}
+
+.authors {
+    margin-top: 0.5rem;
+}
+
+.research-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.55rem 1rem;
+    background: var(--navy);
+    color: #ffffff;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+.research-link:hover {
+    background: var(--gold-dark);
+}
+
+@media (max-width: 700px) {
+    .published-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .published-card {
+        padding: 1.3rem;
+    }
+}
+
 </style>
