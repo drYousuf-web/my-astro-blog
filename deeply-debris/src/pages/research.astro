@@ -1,1 +1,51 @@
 
+---
+import Layout from '../layouts/PageLayout.astro';
+
+const title = 'الأبحاث والمنشورات العلمية';
+const description = 'الإنتاج العلمي والبحثي للدكتور يوسف إبراهيم أحمد الجدائمي، ويشمل الرسائل الجامعية والأبحاث المنشورة وأوراق المؤتمرات والمساهمات العلمية.';
+
+---
+
+<Layout title={title} description={description}>
+    <section class="research-intro">
+        <h2>الإنتاج العلمي والبحثي</h2>
+
+        <p>
+            تضم هذه الصفحة الإنتاج العلمي والبحثي في مجالات التسويق
+            وإدارة الأعمال وجودة الخدمات، بما يشمل الرسائل الجامعية،
+            والأبحاث المنشورة في المجلات العلمية، والأوراق المقدمة
+            في المؤتمرات والندوات العلمية، والمساهمات في الكتب.
+        </p>
+    </section>
+</Layout>
+
+<style>
+    .research-intro {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 16px;
+        border-right: 4px solid var(--gold);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .research-intro h2 {
+        color: var(--navy);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .research-intro p {
+        color: var(--gray-dark);
+        line-height: 2.1;
+        text-align: justify;
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .research-intro {
+            padding: 1.25rem;
+        }
+    }
+</style>
+
