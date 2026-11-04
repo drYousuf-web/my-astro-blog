@@ -3,20 +3,80 @@
 import Layout from '../layouts/PageLayout.astro';
 
 const title = 'الأبحاث والمنشورات العلمية';
-const description = 'الإنتاج العلمي والبحثي للدكتور يوسف إبراهيم أحمد الجدائمي، ويشمل الرسائل الجامعية والأبحاث المنشورة وأوراق المؤتمرات والمساهمات العلمية.';
+const description = 'الإنتاج العلمي والبحثي للدكتور يوسف إبراهيم أحمد الجدائمي.';
 
+const academicWorks = [
+    {
+        degree: 'الدكتوراه',
+        year: '2015',
+        title: 'Service Quality, Perceived Value and Patient Satisfaction: A Study of Public and Private Hospitals in Tripoli, Libya.',
+        university: 'Universiti Tun Abdul Razak',
+        country: 'Malaysia',
+        description: 'رسالة دكتوراه في التسويق، تناولت العلاقة بين جودة الخدمة والقيمة المدركة ورضا المرضى في المستشفيات العامة والخاصة بمدينة طرابلس.',
+    },
+    {
+        degree: 'الماجستير',
+        year: '2005',
+        title: 'أثر المزيج التسويقي على اتجاهات المنتفعين نحو الخدمة الصحية المقدمة: دراسة تطبيقية على العيادات الخاصة بمنطقة زليتن بشعبية المرقب.',
+        university: 'الأكاديمية الليبية للدراسات العليا',
+        country: 'طرابلس – ليبيا',
+        description: 'رسالة ماجستير تناولت أثر عناصر المزيج التسويقي في تشكيل اتجاهات المنتفعين نحو الخدمات الصحية.',
+    },
+    {
+        degree: 'البكالوريوس',
+        year: '1995',
+        title: 'سبل المواءمة بين سمات القوى العاملة وبين هيكل الوظائف بالتطبيق في شركة ليبيا للتأمين – فرع الخمس.',
+        university: 'جامعة ناصر – كلية الاقتصاد والعلوم السياسية',
+        country: 'زليتن – ليبيا',
+        description: 'بحث تخرج في مجال إدارة الموارد البشرية والمواءمة بين خصائص العاملين ومتطلبات الوظائف.',
+    },
+];
 ---
 
 <Layout title={title} description={description}>
     <section class="research-intro">
         <h2>الإنتاج العلمي والبحثي</h2>
-
         <p>
             تضم هذه الصفحة الإنتاج العلمي والبحثي في مجالات التسويق
             وإدارة الأعمال وجودة الخدمات، بما يشمل الرسائل الجامعية،
-            والأبحاث المنشورة في المجلات العلمية، والأوراق المقدمة
-            في المؤتمرات والندوات العلمية، والمساهمات في الكتب.
+            والأبحاث المنشورة، وأوراق المؤتمرات والمساهمات العلمية.
         </p>
+    </section>
+
+    <section class="academic-section">
+        <div class="section-heading">
+            <span class="section-label">المسار الأكاديمي</span>
+            <h2>الرسائل والبحوث الجامعية</h2>
+            <p>الأعمال البحثية المنجزة ضمن مراحل التأهيل العلمي والأكاديمي.</p>
+        </div>
+
+        <div class="academic-grid">
+            {academicWorks.map((work) => (
+                <article class="academic-card">
+                    <div class="card-top">
+                        <span class="degree">{work.degree}</span>
+                        <span class="year">{work.year}</span>
+                    </div>
+
+                    <h3>{work.title}</h3>
+
+                    <p class="description">{work.description}</p>
+
+                    <div class="university">
+                        <strong>المؤسسة العلمية:</strong>
+                        <span>{work.university}</span>
+                    </div>
+
+                    <div class="country">
+                        <span>{work.country}</span>
+                    </div>
+
+                    <div class="publication-status">
+                        بحث جامعي غير منشور
+                    </div>
+                </article>
+            ))}
+        </div>
     </section>
 </Layout>
 
@@ -27,6 +87,7 @@ const description = 'الإنتاج العلمي والبحثي للدكتور �
         border-radius: 16px;
         border-right: 4px solid var(--gold);
         box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+        margin-bottom: 3rem;
     }
 
     .research-intro h2 {
@@ -42,10 +103,138 @@ const description = 'الإنتاج العلمي والبحثي للدكتور �
         margin: 0;
     }
 
-    @media (max-width: 600px) {
+    .academic-section {
+        margin-top: 3rem;
+    }
+
+    .section-heading {
+        margin-bottom: 1.8rem;
+    }
+
+    .section-label {
+        color: var(--gold-dark);
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .section-heading h2 {
+        color: var(--navy);
+        font-size: 1.7rem;
+        font-weight: 800;
+        margin: 0.4rem 0;
+    }
+
+    .section-heading p {
+        color: var(--gray-dark);
+        line-height: 1.9;
+    }
+
+    .academic-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem;
+    }
+
+    .academic-card {
+        background: #ffffff;
+        border: 1px solid #e8edf2;
+        border-radius: 14px;
+        padding: 1.6rem;
+        box-shadow: 0 4px 15px rgba(11, 37, 69, 0.04);
+        border-top: 3px solid var(--gold);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .academic-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 9px 24px rgba(11, 37, 69, 0.09);
+    }
+
+    .card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .degree {
+        color: var(--navy);
+        background: #eef2f7;
+        padding: 0.35rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+    .year {
+        color: var(--gold-dark);
+        font-weight: 800;
+        font-size: 1rem;
+    }
+
+    .academic-card h3 {
+        color: var(--navy);
+        font-size: 1.05rem;
+        line-height: 1.9;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        color: var(--gray-dark);
+        font-size: 0.93rem;
+        line-height: 2;
+        margin-bottom: 1.2rem;
+    }
+
+    .university {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        border-top: 1px solid #edf0f4;
+        padding-top: 1rem;
+        line-height: 1.8;
+    }
+
+    .university strong {
+        color: var(--navy);
+        font-size: 0.85rem;
+    }
+
+    .university span,
+    .country {
+        color: var(--gray-dark);
+        font-size: 0.9rem;
+    }
+
+    .country {
+        margin-top: 0.4rem;
+    }
+
+    .publication-status {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.35rem 0.7rem;
+        background: #f5f5f5;
+        color: #666666;
+        border-radius: 5px;
+        font-size: 0.78rem;
+    }
+
+    @media (max-width: 700px) {
+        .academic-grid {
+            grid-template-columns: 1fr;
+        }
+
         .research-intro {
-            padding: 1.25rem;
+            padding: 1.3rem;
+        }
+
+        .section-heading h2 {
+            font-size: 1.4rem;
+        }
+
+        .academic-card {
+            padding: 1.3rem;
         }
     }
 </style>
-
