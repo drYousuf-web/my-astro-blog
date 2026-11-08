@@ -1,1 +1,484 @@
 
+---
+const proceedings = [
+    {
+        year: '2012',
+        title: 'A Conceptual Framework of the Relationship Between Service Quality and Patient Satisfaction in Public and Private Hospitals in Tripoli, Libya: The Importance of Hospital Access and Cost.',
+        authors: 'Yousf Ibrahim Aljoudimi & Ismail Rejab',
+        event: '2nd International Conference on Accounting, Business and Economics (ICABEC2012)',
+        organizer: 'Universiti Tun Abdul Razak',
+        location: 'Kuantan, Pahang, Malaysia',
+        date: '10–11 November 2012',
+        pages: '285–290',
+        participation: 'مشاركة حضورية',
+        link: '',
+        linkLabel: '',
+    },
+];
+
+const presentedPapers = [
+    {
+        year: '2017',
+        title: 'الأبعاد الدينية والأخلاقية لتقييم جودة أداء الأستاذ الجامعي من وجهة نظر خريجي كلية الاقتصاد والتجارة بالجامعة الأسمرية الإسلامية.',
+        event: 'الندوة العلمية الأولى لقسم إدارة الأعمال: أخلاقيات العمل الوظيفي – الواقع والتطلعات',
+        organizer: 'جامعة المرقب',
+        location: 'الخمس – ليبيا',
+        date: '26–27 يوليو 2017',
+        pages: '77–111',
+        participation: 'مشاركة حضورية',
+        publication: 'بيانات النشر ضمن الوقائع غير متاحة حالياً',
+    },
+    {
+        year: '2017',
+        title: 'المسؤولية الاجتماعية ومساهمتها في تحسين التنمية المستدامة من منظور تسويقي: دراسة تطبيقية على المصحات الخاصة ببلدية زليتن.',
+        event: 'المؤتمر العلمي الدولي الأول: السياسات الاقتصادية ومستقبل التنمية المستدامة في ليبيا',
+        organizer: 'جامعة المرقب',
+        location: 'الخمس – ليبيا',
+        date: '11–13 ديسمبر 2017',
+        pages: '1071–1108',
+        participation: 'مشاركة حضورية',
+        publication: 'بيانات النشر ضمن الوقائع غير متاحة حالياً',
+    },
+    {
+        year: '2018',
+        title: 'إدراك المسؤولين في الأسواق التجارية لمسؤولياتهم الاجتماعية تجاه المستهلكين بتوفير خدمة البيع الإلكتروني: دراسة ميدانية على الأسواق التجارية بمدينة مصراتة.',
+        event: 'المؤتمر العلمي الدولي الثاني: الثورة التكنولوجية (اقتصاديات القرن الحادي والعشرين)',
+        organizer: 'كلية الاقتصاد والتجارة – جامعة المرقب',
+        location: 'ليبيا',
+        date: '7–9 أكتوبر 2018',
+        pages: 'تُستكمل بيانات الصفحات',
+        participation: 'مشاركة حضورية',
+        publication: 'بيانات النشر ضمن الوقائع غير متاحة حالياً',
+    },
+    {
+        year: '—',
+        title: 'اللامركزية في تمكين النشاط التسويقي لإمكانية تقديم التنمية المكانية كمنتج (مدخل استكشافي).',
+        event: 'مشاركة علمية ضمن فعالية بجامعة سرت',
+        organizer: 'جامعة سرت',
+        location: 'ليبيا',
+        date: 'تُستكمل بيانات التاريخ',
+        pages: 'تُراجع بيانات الصفحات',
+        participation: 'مشاركة حضورية',
+        publication: 'بيانات المؤتمر وسنة انعقاده تحتاج إلى استكمال',
+        link: 'https://su.edu.ly/economy/phocadownload/files/economy2/Research/economy2-7.pdf',
+        linkLabel: 'الاطلاع على الورقة',
+    },
+    {
+        year: '2020',
+        title: 'مقومات نجاح التسويق المستدام في ظل الشريعة الإسلامية.',
+        event: 'فعالية علمية حول الاقتصاد الحديث والتنمية المستدامة',
+        organizer: 'المركز الجامعي تيسمسيلت',
+        location: 'الجزائر – عن بُعد عبر Zoom',
+        date: '2020',
+        pages: 'تُنسب بيانات الصفحات إلى فصل الكتاب',
+        participation: 'مشاركة عن بُعد',
+        publication: 'نُشرت لاحقاً ضمن فصل في كتاب علمي عام 2020',
+        book: 'سبل بناء وتعزيز الاقتصاد السياحي في الجزائر كبديل استراتيجي من بدائل التنمية المستدامة',
+    },
+];
+---
+
+<section class="conference-area" dir="rtl">
+    <header class="conference-heading">
+        <span class="eyebrow">ACADEMIC CONTRIBUTIONS</span>
+        <h2>أوراق المؤتمرات والندوات العلمية</h2>
+        <p>
+            مشاركات علمية في مؤتمرات وندوات محلية ودولية،
+            في مجالات التسويق والإدارة وجودة الخدمات والتنمية المستدامة.
+        </p>
+    </header>
+
+    <section class="paper-group">
+        <div class="group-heading">
+            <span class="group-number">01</span>
+            <div>
+                <h3>أوراق منشورة ضمن وقائع المؤتمرات</h3>
+                <p>أوراق ثبت نشرها ضمن وثائق أو وقائع المؤتمر.</p>
+            </div>
+        </div>
+
+        {proceedings.map((paper) => (
+            <article class="paper-card proceedings-card">
+                <div class="card-top">
+                    <span class="publication-tag">منشور ضمن وقائع المؤتمر</span>
+                    <span class="paper-year">{paper.year}</span>
+                </div>
+
+                <h4 class="paper-title english-title">{paper.title}</h4>
+                <p class="authors">{paper.authors}</p>
+
+                <div class="event-details">
+                    <div class="detail">
+                        <span class="detail-label">المؤتمر</span>
+                        <span>{paper.event}</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">الجهة المنظمة</span>
+                        <span>{paper.organizer}</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">المكان والتاريخ</span>
+                        <span>{paper.location} – {paper.date}</span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">الصفحات</span>
+                        <span>{paper.pages}</span>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <span class="participation">{paper.participation}</span>
+                    <span class="publication-note">نشر في وقائع المؤتمر</span>
+                </div>
+            </article>
+        ))}
+    </section>
+
+    <section class="paper-group">
+        <div class="group-heading">
+            <span class="group-number">02</span>
+            <div>
+                <h3>أوراق علمية مقدمة في المؤتمرات والندوات</h3>
+                <p>مشاركات علمية، مع توضيح حالة النشر المتاحة لكل ورقة.</p>
+            </div>
+        </div>
+
+        <div class="papers-grid">
+            {presentedPapers.map((paper) => (
+                <article class="paper-card">
+                    <div class="card-top">
+                        <span class="presentation-tag">ورقة مقدمة</span>
+                        <span class="paper-year">{paper.year}</span>
+                    </div>
+
+                    <h4 class="paper-title">{paper.title}</h4>
+
+                    <div class="event-details">
+                        <div class="detail">
+                            <span class="detail-label">الفعالية العلمية</span>
+                            <span>{paper.event}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">الجهة المنظمة</span>
+                            <span>{paper.organizer}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">المكان والتاريخ</span>
+                            <span>{paper.location} – {paper.date}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">الصفحات</span>
+                            <span>{paper.pages}</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="participation">{paper.participation}</span>
+                    </div>
+
+                    <div class="publication-status">
+                        <strong>حالة النشر:</strong>
+                        <span>{paper.publication}</span>
+                        {paper.book && (
+                            <p class="book-reference">
+                                <strong>الكتاب:</strong> {paper.book}
+                            </p>
+                        )}
+                    </div>
+
+                    {paper.link && (
+                        <a class="paper-link" href={paper.link} target="_blank" rel="noopener noreferrer">
+                            {paper.linkLabel} <span aria-hidden="true">←</span>
+                        </a>
+                    )}
+                </article>
+            ))}
+        </div>
+    </section>
+</section>
+
+<style>
+    .conference-area {
+        --conference-navy: #142b49;
+        --conference-gold: #c5a15b;
+        --conference-muted: #687587;
+        --conference-border: #e7eaf0;
+
+        width: 100%;
+        margin: 2rem 0;
+        color: var(--gray-dark, #344054);
+    }
+
+    .conference-heading {
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+
+    .eyebrow {
+        display: inline-block;
+        margin-bottom: 0.7rem;
+        color: var(--conference-gold);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+
+    .conference-heading h2 {
+        margin: 0 0 0.8rem;
+        color: var(--conference-navy);
+        font-size: clamp(1.6rem, 4vw, 2.1rem);
+        font-weight: 800;
+    }
+
+    .conference-heading p {
+        max-width: 680px;
+        margin: 0 auto;
+        color: var(--conference-muted);
+        line-height: 1.9;
+    }
+
+    .paper-group {
+        margin: 3rem 0;
+    }
+
+    .group-heading {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.4rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--conference-border);
+    }
+
+    .group-number {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+        place-items: center;
+        border: 1px solid var(--conference-gold);
+        border-radius: 12px;
+        color: var(--conference-gold);
+        font-weight: 800;
+    }
+
+    .group-heading h3 {
+        margin: 0 0 0.3rem;
+        color: var(--conference-navy);
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+
+    .group-heading p {
+        margin: 0;
+        color: var(--conference-muted);
+        font-size: 0.9rem;
+    }
+
+    .papers-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem;
+    }
+
+    .paper-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        padding: 1.5rem;
+        border: 1px solid var(--conference-border);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 5px 20px rgba(20, 43, 73, 0.045);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .paper-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(20, 43, 73, 0.1);
+    }
+
+    .proceedings-card {
+        border-top: 4px solid var(--conference-gold);
+    }
+
+    .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .publication-tag,
+    .presentation-tag {
+        display: inline-block;
+        padding: 0.35rem 0.7rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    .publication-tag {
+        background: #f8f1e3;
+        color: #896b32;
+    }
+
+    .presentation-tag {
+        background: #edf1f6;
+        color: var(--conference-navy);
+    }
+
+    .paper-year {
+        color: var(--conference-gold);
+        font-size: 1.05rem;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .paper-title {
+        margin: 0 0 1.2rem;
+        color: var(--conference-navy);
+        font-size: 1.05rem;
+        font-weight: 800;
+        line-height: 1.9;
+    }
+
+    .english-title {
+        direction: ltr;
+        text-align: left;
+        font-size: 1.05rem;
+    }
+
+    .authors {
+        margin: -0.5rem 0 1rem;
+        color: var(--conference-muted);
+        font-size: 0.88rem;
+        direction: ltr;
+        text-align: left;
+    }
+
+    .event-details {
+        display: grid;
+        gap: 0.85rem;
+        margin-top: auto;
+    }
+
+    .detail {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .detail-label {
+        color: var(--conference-gold);
+        font-size: 0.78rem;
+        font-weight: 800;
+    }
+
+    .detail > span:last-child {
+        color: var(--conference-muted);
+    }
+
+    .card-footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1.2rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--conference-border);
+    }
+
+    .participation {
+        color: var(--conference-navy);
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .publication-note {
+        color: #896b32;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+
+    .publication-status {
+        margin-top: 1rem;
+        padding: 0.8rem;
+        border-radius: 10px;
+        background: #f7f8fa;
+        color: var(--conference-muted);
+        font-size: 0.82rem;
+        line-height: 1.8;
+    }
+
+    .publication-status strong {
+        color: var(--conference-navy);
+    }
+
+    .book-reference {
+        margin: 0.4rem 0 0;
+    }
+
+    .paper-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: flex-start;
+        margin-top: 1rem;
+        color: var(--conference-navy);
+        font-size: 0.88rem;
+        font-weight: 800;
+        text-decoration: none;
+    }
+
+    .paper-link:hover {
+        color: #9b7737;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+        .papers-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .paper-card {
+            padding: 1.2rem;
+        }
+
+        .group-heading h3 {
+            font-size: 1.05rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .group-heading {
+            align-items: flex-start;
+        }
+
+        .group-number {
+            width: 38px;
+            height: 38px;
+            flex-basis: 38px;
+        }
+
+        .card-top {
+            align-items: flex-start;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .paper-card {
+            transition: none;
+        }
+
+        .paper-card:hover {
+            transform: none;
+        }
+    }
+</style>
+
