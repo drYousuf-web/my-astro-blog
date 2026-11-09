@@ -63,18 +63,21 @@ const presentedPapers = [
         link: 'https://su.edu.ly/economy/phocadownload/files/economy2/Research/economy2-7.pdf',
         linkLabel: 'الاطلاع على الورقة',
     },
-    {
-        year: '2020',
-        title: 'مقومات نجاح التسويق المستدام في ظل الشريعة الإسلامية.',
-        event: 'فعالية علمية حول الاقتصاد الحديث والتنمية المستدامة',
-        organizer: 'المركز الجامعي تيسمسيلت',
-        location: 'الجزائر – عن بُعد عبر Zoom',
-        date: '2020',
-        pages: 'تُنسب بيانات الصفحات إلى فصل الكتاب',
-        participation: 'مشاركة عن بُعد',
-        publication: 'نُشرت لاحقاً ضمن فصل في كتاب علمي عام 2020',
-        book: 'سبل بناء وتعزيز الاقتصاد السياحي في الجزائر كبديل استراتيجي من بدائل التنمية المستدامة',
-    },
+   {
+    year: '2020',
+    title: 'مقومات نجاح التسويق المستدام في ظل الشريعة الإسلامية.',
+    englishTitle: 'The Fundamentals of the Success of Sustainable Marketing in Islamic Perspective',
+    event: 'الملتقى الدولي الأول: سبل بناء وتعزيز الاقتصاد السياحي في الجزائر كبديل استراتيجي من بدائل التنمية المستدامة',
+    organizer: 'المركز الجامعي تيسمسيلت',
+    location: 'الجزائر – عن بُعد عبر منصة Zoom',
+    date: '17–18 أكتوبر 2020',
+    pages: '',
+    participation: 'عرض البحث عن بُعد عبر Zoom',
+    publication: 'نُشر البحث ضمن كتاب أعمال الملتقى الدولي الأول، الطبعة الأولى، 2020.',
+    book: 'سبل بناء وتعزيز الاقتصاد السياحي في الجزائر كبديل استراتيجي من بدائل التنمية المستدامة',
+    bookPublisher: 'مخبر الاقتصاد الحديث والتنمية المستدامة، المركز الجامعي تيسمسيلت',
+    isbn: '978-9931-9632-3-3',
+},
 ];
 ---
 
@@ -153,6 +156,10 @@ const presentedPapers = [
 
                     <h4 class="paper-title">{paper.title}</h4>
 
+{paper.englishTitle && (
+    <p class="english-paper-title">{paper.englishTitle}</p>
+)}
+
                     <div class="event-details">
                         <div class="detail">
                             <span class="detail-label">الفعالية العلمية</span>
@@ -166,10 +173,12 @@ const presentedPapers = [
                             <span class="detail-label">المكان والتاريخ</span>
                             <span>{paper.location} – {paper.date}</span>
                         </div>
-                        <div class="detail">
-                            <span class="detail-label">الصفحات</span>
-                            <span>{paper.pages}</span>
-                        </div>
+                       {paper.pages && (
+    <div class="detail">
+        <span class="detail-label">الصفحات</span>
+        <span>{paper.pages}</span>
+    </div>
+)}
                     </div>
 
                     <div class="card-footer">
@@ -179,11 +188,23 @@ const presentedPapers = [
                     <div class="publication-status">
                         <strong>حالة النشر:</strong>
                         <span>{paper.publication}</span>
-                        {paper.book && (
-                            <p class="book-reference">
-                                <strong>الكتاب:</strong> {paper.book}
-                            </p>
-                        )}
+                       {paper.book && (
+    <p class="book-reference">
+        <strong>الكتاب:</strong> {paper.book}
+    </p>
+)}
+
+{paper.bookPublisher && (
+    <p class="book-reference">
+        <strong>الناشر:</strong> {paper.bookPublisher}
+    </p>
+)}
+
+{paper.isbn && (
+    <p class="book-reference">
+        <strong>ISBN:</strong> {paper.isbn}
+    </p>
+)}
                     </div>
 
                     {paper.link && (
@@ -346,10 +367,27 @@ const presentedPapers = [
     }
 
     .english-title {
-        direction: ltr;
-        text-align: left;
-        font-size: 1.05rem;
-    }
+    direction: ltr;
+    text-align: left;
+    font-size: 1.05rem;
+}
+
+.english-paper-title {
+    margin: -0.8rem 0 1.2rem;
+    color: var(--conference-muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    direction: ltr;
+    text-align: left;
+}
+
+.authors {
+    margin: -0.5rem 0 1rem;
+    color: var(--conference-muted);
+    font-size: 0.88rem;
+    direction: ltr;
+    text-align: left;
+}
 
     .authors {
         margin: -0.5rem 0 1rem;
