@@ -150,7 +150,9 @@ const presentedPapers = [
             {presentedPapers.map((paper) => (
                 <article class="paper-card">
                     <div class="card-top">
-                        <span class="presentation-tag">ورقة مقدمة</span>
+                       <span class="presentation-tag">
+    {paper.book ? 'بحث مقدم ومنشور' : 'ورقة مقدمة'}
+</span>
                         <span class="paper-year">{paper.year}</span>
                     </div>
 
@@ -381,13 +383,6 @@ const presentedPapers = [
     text-align: left;
 }
 
-.authors {
-    margin: -0.5rem 0 1rem;
-    color: var(--conference-muted);
-    font-size: 0.88rem;
-    direction: ltr;
-    text-align: left;
-}
 
     .authors {
         margin: -0.5rem 0 1rem;
